@@ -45,11 +45,11 @@ public class PersonaRepositoryTest {
 	public void testReadPersona() {
 		Persona persona = Persona.builder()
 				.nombrePersona("Test Read")
-				.edadPersona(30)
-				.telefonoPersona("987654321")
-				.sexoPersona("Femenino")
-				.idOcupacion(2)
-				.fechaNac(LocalDate.of(1993, 4, 20))
+				.edadPersona(28)
+				.telefonoPersona("123456789")
+				.sexoPersona("Masculino")
+				.idOcupacion(1)
+				.fechaNac(LocalDate.of(1997, 8, 15))
 				.build();
 		Persona saved = personaRepository.save(persona);
 		// Buscar la persona guardada por su ID.
@@ -92,12 +92,12 @@ public class PersonaRepositoryTest {
 	@Test
 	public void testDeletePersona() {
 		Persona persona = Persona.builder()
-				.nombrePersona("Test Delete")
-				.edadPersona(40)
-				.telefonoPersona("444555666")
+				.nombrePersona("Test Update")
+				.edadPersona(28)
+				.telefonoPersona("123456789")
 				.sexoPersona("Masculino")
-				.idOcupacion(4)
-				.fechaNac(LocalDate.of(1983, 1, 1))
+				.idOcupacion(1)
+				.fechaNac(LocalDate.of(1997, 8, 15))
 				.build();
 		Persona saved = personaRepository.save(persona);
 
