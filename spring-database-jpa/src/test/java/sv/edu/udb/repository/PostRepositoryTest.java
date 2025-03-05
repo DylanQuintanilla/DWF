@@ -8,6 +8,7 @@ import sv.edu.udb.repository.domain.Post;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -32,11 +33,11 @@ class PostRepositoryTest {
         Long expectedId = 1L;
         final String expectedTitle = "SpringBoot as a back-end";
         final LocalDate expectedDate = LocalDate.of(2023, 9, 29);
-        final Post actualPost = postRepository.findById(expectedId);
+        final Optional<Post> actualPost = postRepository.findById(expectedId);
         assertNotNull(actualPost);
-        assertEquals(expectedId, actualPost.getId());
-        assertEquals(expectedTitle, actualPost.getTitle());
-        assertEquals(expectedDate, actualPost.getPostDate());
+        assertEquals(expectedId, actualPost.get().getId());
+        assertEquals(expectedTitle, actualPost.get().getTitle());
+        assertEquals(expectedDate, actualPost.get().getPostDate());
     }
 
     @Test
@@ -57,11 +58,11 @@ class PostRepositoryTest {
                 .build();
         postRepository.save(newPost);
 
-        final Post actualPost = postRepository.findById(expectedId);
+        final Optional<Post> actualPost = postRepository.findById(expectedId);
         assertNotNull(actualPost);
-        assertEquals(expectedId, actualPost.getId());
-        assertEquals(expectedTitle, actualPost.getTitle());
-        assertEquals(expectedDate, actualPost.getPostDate());
+        assertEquals(expectedId, actualPost.get().getId());
+        assertEquals(expectedTitle, actualPost.get().getTitle());
+        assertEquals(expectedDate, actualPost.get().getPostDate());
 
         //Despues de comprobar que el post con Id 2 existe
         //lo borramos para mantener consistencia de los datos y los test cases
@@ -84,12 +85,12 @@ class PostRepositoryTest {
 
         postRepository.save(newPost); //saving
 
-        final Post actualPost = postRepository.findById(expectedId);
+        final Optional<Post> actualPost = postRepository.findById(expectedId);
         assertNotNull(actualPost);
 
         postRepository.delete(newPost); //deleting
 
-        final Post deletedPost = postRepository.findById(expectedId);
+        final Optional<Post> deletedPost = postRepository.findById(expectedId);
         assertNull(deletedPost);
     }
 }
