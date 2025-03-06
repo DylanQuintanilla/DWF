@@ -10,8 +10,8 @@ import lombok.*;
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "Ocupacion")
-public class Ocupacion {
+@Table(name = "Ocupaciones")
+public class Ocupaciones {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long idOcupacion;
