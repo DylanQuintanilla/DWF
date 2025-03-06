@@ -4,8 +4,8 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
+//Clase para poder comprobar que tenemos una conexion a base de datos
 public class DatabaseConnectionTest {
-    // Cambia estos parámetros según tu configuración MySQL
     private static final String URL = "jdbc:mysql://localhost:3306/desafio";
     private static final String USER = "root";
     private static final String PASSWORD = "";
