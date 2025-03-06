@@ -6,13 +6,12 @@ import lombok.*;
 
 import java.time.LocalDate;
 
-//La clase para la entidad de Persona
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @Entity
-@Table(name = "Persona")
+@Table(name = "persona")
 public class Persona {
 
     @Id

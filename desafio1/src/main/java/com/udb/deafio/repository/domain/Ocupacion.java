@@ -4,7 +4,7 @@ package com.udb.deafio.repository.domain;
 import jakarta.persistence.*;
 import lombok.*;
 
-//La clase para la entidad Ocupacion
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
