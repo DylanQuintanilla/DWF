@@ -11,6 +11,7 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+// Clase para hacer las pruebas unitarias de el CRUD
 @SpringBootTest
 public class PersonaRepositoryTest {
 
